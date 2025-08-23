@@ -1,0 +1,6 @@
+[
+  {"id": "santander", "nombre": "Santander Río"},
+  {"id": "galicia", "nombre": "Banco Galicia"},
+  {"id": "bbva", "nombre": "BBVA"},
+  {"id": "mercadopago", "nombre": "Mercado Pago"}
+]

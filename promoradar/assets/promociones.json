@@ -1,0 +1,34 @@
+[
+  {
+    "banco": "Banco Galicia",
+    "institucionId": "galicia",
+    "titulo": "15% en supermercados",
+    "descripcion": "Lunes con tarjetas Galicia",
+    "vigencia": "2025-09-01",
+    "categorias": ["supermercados"]
+  },
+  {
+    "banco": "BBVA",
+    "institucionId": "bbva",
+    "titulo": "2x1 en cine",
+    "descripcion": "Cadenas seleccionadas",
+    "vigencia": "2025-09-10",
+    "categorias": ["cines", "entretenimiento"]
+  },
+  {
+    "banco": "Santander Río",
+    "institucionId": "santander",
+    "titulo": "10% en restaurantes",
+    "descripcion": "Jue-Dom",
+    "vigencia": "2025-09-15",
+    "categorias": ["restaurantes", "gastronomia"]
+  },
+  {
+    "banco": "Mercado Pago",
+    "institucionId": "mercadopago",
+    "titulo": "Hasta 20% en electrónica",
+    "descripcion": "Locales adheridos",
+    "vigencia": "2025-09-30",
+    "categorias": ["electronica"]
+  }
+]
