@@ -1,5 +1,6 @@
 // lib/screens/home_page.dart
 import 'package:flutter/material.dart';
+import 'package:promoradar/screens/promotion_detail_page.dart';
 import 'package:provider/provider.dart';
 import '../providers/promociones_provider.dart';
 import '../providers/users_pref_provider.dart';
@@ -225,9 +226,11 @@ class _PromoCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
         onTap: () {
-          // TODO: navegar a detalle de promo
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Detalle: ${promo.titulo} (demo)')),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => PromotionDetailPage(promo: promo),
+            ),
           );
         },
         child: Padding(
