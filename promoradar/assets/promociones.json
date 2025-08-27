@@ -2,33 +2,45 @@
   {
     "banco": "Banco Galicia",
     "institucionId": "galicia",
-    "titulo": "15% en supermercados",
-    "descripcion": "Lunes con tarjetas Galicia",
+    "titulo": "Super Lunes Galicia",
+    "descripcion": "15% de descuento en supermercados los lunes",
     "vigencia": "2025-09-01",
-    "categorias": ["supermercados"]
+    "categorias": ["supermercados"],
+    "termsSummary": "Tope de reintegro $6000 por mes. Válido en locales adheridos.",
+    "termsUrl": "https://www.bancogalicia.com/promociones/super-lunes",
+    "termsMarkdown": "### Bases y condiciones\n- Válido todos los lunes de agosto y septiembre 2025.\n- Tope de reintegro $6000 por cuenta.\n- No acumulable con otras promociones.\n- Ver listado de supermercados adheridos en la web del banco."
   },
   {
     "banco": "BBVA",
     "institucionId": "bbva",
     "titulo": "2x1 en cine",
-    "descripcion": "Cadenas seleccionadas",
+    "descripcion": "Todos los miércoles en cadenas adheridas",
     "vigencia": "2025-09-10",
-    "categorias": ["cines", "entretenimiento"]
+    "categorias": ["cines", "entretenimiento"],
+    "termsSummary": "Beneficio aplicable a salas 2D. Máximo 2 entradas por cliente.",
+    "termsUrl": "https://www.bbva.com/promociones/cine",
+    "termsMarkdown": "### Condiciones\n- Solo válido los miércoles.\n- No incluye salas 3D, IMAX o VIP.\n- Beneficio disponible para clientes con tarjeta BBVA Visa o Mastercard."
   },
   {
     "banco": "Santander Río",
     "institucionId": "santander",
     "titulo": "10% en restaurantes",
-    "descripcion": "Jue-Dom",
+    "descripcion": "Jueves a domingo pagando con tarjeta Santander",
     "vigencia": "2025-09-15",
-    "categorias": ["restaurantes", "gastronomia"]
+    "categorias": ["restaurantes", "gastronomia"],
+    "termsSummary": "Reintegro acreditado en el resumen siguiente. Tope $5000 mensual.",
+    "termsUrl": "https://www.santander.com.ar/promociones/restaurantes",
+    "termsMarkdown": "### Detalles\n- Aplica en restaurantes adheridos.\n- Tope $5000 mensual por cuenta.\n- No aplica en delivery ni plataformas de terceros."
   },
   {
     "banco": "Mercado Pago",
     "institucionId": "mercadopago",
     "titulo": "Hasta 20% en electrónica",
-    "descripcion": "Locales adheridos",
+    "descripcion": "Promoción en locales seleccionados abonando con QR Mercado Pago",
     "vigencia": "2025-09-30",
-    "categorias": ["electronica"]
+    "categorias": ["electronica"],
+    "termsSummary": "Descuento aplicado al pagar con QR. Tope $2000 por compra.",
+    "termsUrl": "https://www.mercadopago.com/promos/electronica",
+    "termsMarkdown": "### Bases\n- Válido en locales adheridos.\n- Aplica en productos seleccionados de electrónica.\n- Tope $2000 de descuento por transacción."
   }
 ]

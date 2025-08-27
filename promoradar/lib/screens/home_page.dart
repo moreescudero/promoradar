@@ -1,6 +1,7 @@
 // lib/screens/home_page.dart
 import 'package:flutter/material.dart';
 import 'package:promoradar/screens/promotion_detail_page.dart';
+import '../widgets/promo_card.dart';
 import 'package:provider/provider.dart';
 import '../providers/promociones_provider.dart';
 import '../providers/users_pref_provider.dart';
@@ -93,8 +94,18 @@ class HomePage extends StatelessWidget {
               separatorBuilder: (_, __) => const SizedBox(height: 8),
               itemBuilder: (_, i) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: _PromoCard(promo: entry.value[i]),
-              ),
+                child: PromoCard(
+                  promo: entry.value[i],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => PromotionDetailPage(promo: entry.value[i]),
+                      ),
+                    );
+                  },
+                ),
+              ),      
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 16)),
           ],
@@ -206,97 +217,6 @@ class _SectionHeader extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-// ---------- CARD DE PROMO ----------
-class _PromoCard extends StatelessWidget {
-  final Promocion promo;
-  const _PromoCard({required this.promo});
-
-  @override
-  Widget build(BuildContext context) {
-    final style = bankStyles[promo.institucionId];
-    final color = style?.color ?? Theme.of(context).colorScheme.primary;
-
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      elevation: 1.5,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => PromotionDetailPage(promo: promo),
-            ),
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            children: [
-              // avatar/logo
-              CircleAvatar(
-                radius: 22,
-                backgroundColor: color.withOpacity(0.15),
-                child: style?.logoAsset != null
-                    ? Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Image.asset(style!.logoAsset!),
-                      )
-                    : Icon(Icons.percent, color: color),
-              ),
-              const SizedBox(width: 12),
-
-              // texto
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(promo.titulo,
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-                    const SizedBox(height: 4),
-                    Text(promo.descripcion, maxLines: 2, overflow: TextOverflow.ellipsis),
-                    const SizedBox(height: 8),
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: -8,
-                      children: [
-                        _Tag(text: promo.banco, color: color),
-                        _Tag(text: 'Vigencia: ${promo.vigencia}'),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 8),
-              const Icon(Icons.chevron_right),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ---------- TAG ----------
-class _Tag extends StatelessWidget {
-  final String text;
-  final Color? color;
-  const _Tag({required this.text, this.color});
-  @override
-  Widget build(BuildContext context) {
-    final bg = (color ?? Colors.grey).withOpacity(0.12);
-    final fg = color ?? Colors.grey[800];
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(999),
-      ),
-      child: Text(text, style: TextStyle(color: fg, fontSize: 12)),
     );
   }
 }

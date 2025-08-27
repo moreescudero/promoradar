@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/promocion.dart';
 import '../utils/bank_styles.dart'; // si lo tenés separado
 
@@ -61,6 +63,36 @@ class PromotionDetailPage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
 
+            // 👇 Acá podés insertar el bloque de bases y condiciones
+            if (promo.termsSummary != null) ...[
+              const SizedBox(height: 12),
+              Text(promo.termsSummary!, style: const TextStyle(color: Colors.grey)),
+            ],
+
+            if (promo.termsMarkdown != null) ...[
+              const SizedBox(height: 12),
+              ExpansionTile(
+                title: const Text("Ver bases y condiciones"),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: MarkdownBody(data: promo.termsMarkdown!), // flutter_markdown
+                  ),
+                ],
+              ),
+            ],
+
+            if (promo.termsUrl != null) ...[
+              const SizedBox(height: 12),
+              OutlinedButton.icon(
+                icon: const Icon(Icons.open_in_new),
+                label: const Text("Bases completas"),
+                onPressed: () => launchUrl(Uri.parse(promo.termsUrl!)), // url_launcher
+              ),
+            ],
+
+            const SizedBox(height: 24), 
+
             // Botón de compartir
             Center(
               child: ElevatedButton.icon(
@@ -82,21 +114,6 @@ class PromotionDetailPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-
-            // Bases y condiciones (demo)
-            ExpansionTile(
-              title: const Text("Ver bases y condiciones"),
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Aquí irían los términos y condiciones completos de la promoción. "
-                    "Podés traerlos del JSON, de una API o dejarlos como texto placeholder.",
-                    style: const TextStyle(fontSize: 14, color: Colors.grey),
-                  ),
-                )
-              ],
-            ),
           ],
         ),
       ),
