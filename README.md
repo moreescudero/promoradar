@@ -37,10 +37,12 @@ La idea es que cada usuario seleccione sus bancos / billeteras y pueda ver únic
 - [x] Promos mockeadas desde **JSON local**  
 - [x] Filtros por **banco** y **categorías**  
 - [x] Pantalla de **detalle de promo** con botón de compartir  
-- [ ] Integrar **APIs reales** de bancos y billeteras  
 - [ ] Guardar **favoritos** de usuario (promos destacadas ⭐️)  
+- [ ] Agregar **login** de usuario
+- [ ] Integrar **APIs reales** de bancos y billeteras  
 - [ ] **Notificaciones** locales / push  
 - [ ] **Onboarding inicial** para elegir bancos al primer inicio  
+- [ ] Conexión con **base de datos**
 - [ ] Publicación en **Play Store / App Store**
 
 ---
